@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Luxurious classroom background",
+      "imageUrl": "https://picsum.photos/seed/academic-1/1920/1080",
+      "imageHint": "classroom luxury"
+    },
+    {
+      "id": "faculty-commerce",
+      "description": "Professional commerce teacher",
+      "imageUrl": "https://picsum.photos/seed/faculty-1/600/800",
+      "imageHint": "professor professional"
+    },
+    {
+      "id": "faculty-maths",
+      "description": "Expert mathematics teacher",
+      "imageUrl": "https://picsum.photos/seed/faculty-2/600/800",
+      "imageHint": "teacher mathematics"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Institute Poster 1",
+      "imageUrl": "https://picsum.photos/seed/gallery-1/800/600",
+      "imageHint": "education poster"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Institute Poster 2",
+      "imageUrl": "https://picsum.photos/seed/gallery-2/800/600",
+      "imageHint": "study group"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Institute Poster 3",
+      "imageUrl": "https://picsum.photos/seed/gallery-3/800/600",
+      "imageHint": "library research"
+    },
+    {
+      "id": "gallery-4",
+      "description": "Institute Poster 4",
+      "imageUrl": "https://picsum.photos/seed/gallery-4/800/600",
+      "imageHint": "campus life"
+    }
+  ]
 }
