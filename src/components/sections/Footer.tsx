@@ -73,9 +73,13 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} The Academic Alliance Institute. All rights reserved.
           </p>
-          <div className="flex gap-8 text-sm text-muted-foreground">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm text-muted-foreground">
             <Link href="#" className="hover:text-primary">Privacy Policy</Link>
             <Link href="#" className="hover:text-primary">Terms of Service</Link>
+            <span className="hidden md:inline">|</span>
+            <span className="font-medium">
+              Apps By <a href="https://instagram.com/h4rsh.bansal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline decoration-primary/30 underline-offset-4 transition-all">Harsh Bansal</a>
+            </span>
           </div>
         </div>
       </div>
