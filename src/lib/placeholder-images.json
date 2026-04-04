@@ -19,28 +19,34 @@
       "imageHint": "teacher mathematics"
     },
     {
-      "id": "gallery-1",
-      "description": "Institute Poster 1",
-      "imageUrl": "https://picsum.photos/seed/gallery-1/800/600",
-      "imageHint": "education poster"
+      "id": "gallery-landscape-1",
+      "description": "Modern Commerce Classroom",
+      "imageUrl": "https://picsum.photos/seed/landscape-1/1200/675",
+      "imageHint": "modern classroom"
     },
     {
-      "id": "gallery-2",
-      "description": "Institute Poster 2",
-      "imageUrl": "https://picsum.photos/seed/gallery-2/800/600",
-      "imageHint": "study group"
+      "id": "gallery-landscape-2",
+      "description": "Interactive Study Session",
+      "imageUrl": "https://picsum.photos/seed/landscape-2/1200/675",
+      "imageHint": "students studying"
     },
     {
-      "id": "gallery-3",
-      "description": "Institute Poster 3",
-      "imageUrl": "https://picsum.photos/seed/gallery-3/800/600",
-      "imageHint": "library research"
+      "id": "gallery-landscape-3",
+      "description": "Institute Reception Area",
+      "imageUrl": "https://picsum.photos/seed/landscape-3/1200/675",
+      "imageHint": "office interior"
     },
     {
-      "id": "gallery-4",
-      "description": "Institute Poster 4",
-      "imageUrl": "https://picsum.photos/seed/gallery-4/800/600",
-      "imageHint": "campus life"
+      "id": "gallery-landscape-4",
+      "description": "Student Excellence Awards",
+      "imageUrl": "https://picsum.photos/seed/landscape-4/1200/675",
+      "imageHint": "award ceremony"
+    },
+    {
+      "id": "gallery-landscape-5",
+      "description": "Digital Learning Hub",
+      "imageUrl": "https://picsum.photos/seed/landscape-5/1200/675",
+      "imageHint": "computer lab"
     }
   ]
 }
