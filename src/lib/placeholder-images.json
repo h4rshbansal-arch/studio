@@ -7,6 +7,12 @@
       "imageHint": "classroom luxury"
     },
     {
+      "id": "institute-logo",
+      "description": "The Academic Alliance Institute Logo",
+      "imageUrl": "https://picsum.photos/seed/alliance-logo/200/200",
+      "imageHint": "academy logo"
+    },
+    {
       "id": "faculty-commerce",
       "description": "Surya Kant Sharma - Commerce Expert",
       "imageUrl": "https://picsum.photos/seed/surya-kant/600/800",

@@ -1,14 +1,19 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const logo = PlaceHolderImages.find(img => img.id === 'institute-logo');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +39,17 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-primary-foreground transform group-hover:rotate-12 transition-transform">
-            <GraduationCap size={24} />
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative w-12 h-12 transform group-hover:scale-110 transition-transform">
+            <Image
+              src={logo?.imageUrl || ''}
+              alt="Academic Alliance Logo"
+              fill
+              className="object-contain"
+              data-ai-hint="academy logo"
+            />
           </div>
-          <span className="text-xl font-bold tracking-tight text-foreground">
+          <span className="text-xl font-bold tracking-tight text-foreground hidden sm:inline-block">
             Academic <span className="text-primary">Alliance</span>
           </span>
         </Link>

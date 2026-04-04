@@ -1,16 +1,27 @@
+
 import React from 'react';
 import Link from 'next/link';
-import { GraduationCap, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import Image from 'next/image';
+import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Footer() {
+  const logo = PlaceHolderImages.find(img => img.id === 'institute-logo');
+
   return (
     <footer className="bg-card pt-20 pb-10 border-t border-white/5">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-primary-foreground">
-                <GraduationCap size={24} />
+            <Link href="/" className="flex items-center gap-3">
+              <div className="relative w-12 h-12">
+                <Image
+                  src={logo?.imageUrl || ''}
+                  alt="Academic Alliance Logo"
+                  fill
+                  className="object-contain"
+                  data-ai-hint="academy logo"
+                />
               </div>
               <span className="text-xl font-bold tracking-tight text-foreground">
                 Academic <span className="text-primary">Alliance</span>
@@ -23,7 +34,7 @@ export function Footer() {
               <a href="#" className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href="https://instagram.com/h4rsh.bansal" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
                 <Instagram size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
