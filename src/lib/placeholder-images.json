@@ -8,14 +8,14 @@
     },
     {
       "id": "faculty-commerce",
-      "description": "Professional commerce teacher",
-      "imageUrl": "https://picsum.photos/seed/faculty-1/600/800",
+      "description": "Surya Kant Sharma - Commerce Expert",
+      "imageUrl": "https://picsum.photos/seed/surya-kant/600/800",
       "imageHint": "professor professional"
     },
     {
       "id": "faculty-maths",
-      "description": "Expert mathematics teacher",
-      "imageUrl": "https://picsum.photos/seed/faculty-2/600/800",
+      "description": "Dr. Anita Verma - Maths Expert",
+      "imageUrl": "https://picsum.photos/seed/anita-verma/600/800",
       "imageHint": "teacher mathematics"
     },
     {

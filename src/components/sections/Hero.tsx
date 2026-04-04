@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, ArrowRight } from 'lucide-react';
+import { Phone, ArrowRight, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -24,47 +24,51 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+        <div className="max-w-4xl animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Admission Open 2026-27
+            Commerce & Maths Science Admissions 2026-27
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-            Empowering Your <br />
-            <span className="gold-gradient">Academic Future</span>
+          <h1 className="text-5xl md:text-8xl font-black leading-[1.1] mb-8 tracking-tight">
+            Master Commerce <br />
+            <span className="gold-gradient">With The Best!</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl">
-            Premium Commerce & Maths Science Coaching for excellence. 
-            Personalized attention from the industry's best faculty.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl leading-relaxed">
+            Looking for clarity in <span className="text-foreground font-semibold">Accountancy, Business Studies, or Economics?</span> Join Commerce Classes by <span className="text-primary font-bold">Surya Kant Sharma</span> and learn from a seasoned educator.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-full px-8 text-lg group h-14" asChild>
+          <div className="flex flex-col sm:flex-row gap-5">
+            <Button size="lg" className="rounded-full px-10 text-lg font-bold group h-16 shadow-xl shadow-primary/20" asChild>
               <Link href="#admission">
-                Apply Now <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                Enroll Now <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 text-lg h-14" asChild>
-              <Link href="tel:+918218503127">
-                <Phone className="mr-2" size={20} /> Call Now
+            <Button size="lg" variant="outline" className="rounded-full px-10 text-lg font-bold h-16 border-white/10 hover:bg-white/5" asChild>
+              <Link href="https://wa.me/918218503127">
+                <MessageSquare className="mr-2" size={20} /> WhatsApp Us
               </Link>
             </Button>
           </div>
 
-          <div className="mt-12 flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-foreground">15+</span>
-              <span>Years Experience</span>
+          <div className="mt-16 flex flex-wrap items-center gap-12 text-sm font-medium text-muted-foreground">
+            <div className="flex flex-col gap-1">
+              <span className="text-3xl font-black text-foreground">Elite</span>
+              <span className="uppercase tracking-widest text-[10px] font-bold">Faculty Background</span>
             </div>
-            <div className="w-px h-10 bg-white/10" />
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-foreground">1000+</span>
-              <span>Success Stories</span>
+            <div className="w-px h-12 bg-white/10 hidden sm:block" />
+            <div className="flex flex-col gap-1">
+              <span className="text-3xl font-black text-foreground">100%</span>
+              <span className="uppercase tracking-widest text-[10px] font-bold">Result Oriented</span>
+            </div>
+            <div className="w-px h-12 bg-white/10 hidden sm:block" />
+            <div className="flex flex-col gap-1">
+              <span className="text-3xl font-black text-foreground">Agra</span>
+              <span className="uppercase tracking-widest text-[10px] font-bold">Premier Location</span>
             </div>
           </div>
         </div>
