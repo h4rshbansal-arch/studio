@@ -10,12 +10,27 @@ import { CheckCircle, Send } from 'lucide-react';
 export function AdmissionForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedClass, setSelectedClass] = useState<string>("");
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
+
+    // Construct WhatsApp message
+    const message = `Hello Academic Alliance, I would like to apply for admission.%0A%0A*Admission Inquiry Details*%0A----------------------------%0A*Name:* ${name}%0A*Class:* ${selectedClass}%0A*Phone:* ${phone}%0A----------------------------%0AThank you!`;
+    
+    const whatsappUrl = `https://wa.me/918218503127?text=${message}`;
+
+    // Simulate a brief delay for UX before redirecting
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+
     setIsLoading(false);
     setIsSubmitted(true);
   }
@@ -27,7 +42,7 @@ export function AdmissionForm() {
           <div className="md:w-1/2 bg-primary p-12 text-primary-foreground flex flex-col justify-center">
             <h2 className="text-4xl font-bold mb-6">Join the Alliance</h2>
             <p className="text-primary-foreground/80 text-lg mb-8">
-              Take the first step towards academic excellence. Fill out the form and our counselors will get in touch with you shortly.
+              Take the first step towards academic excellence. Fill out the form and our counselors will get in touch with you shortly via WhatsApp.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
@@ -57,8 +72,8 @@ export function AdmissionForm() {
                 <div className="w-20 h-20 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center mb-6">
                   <CheckCircle size={48} />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">Registration Successful!</h3>
-                <p className="text-muted-foreground">Thank you for your interest. We will call you within 24 hours.</p>
+                <h3 className="text-2xl font-bold mb-2">Redirected to WhatsApp!</h3>
+                <p className="text-muted-foreground">Thank you for your interest. Please send the message on WhatsApp to complete your inquiry.</p>
                 <Button variant="outline" className="mt-8 rounded-full" onClick={() => setIsSubmitted(false)}>
                   Submit Another Inquiry
                 </Button>
@@ -67,35 +82,48 @@ export function AdmissionForm() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" placeholder="Enter student name" required className="rounded-xl h-12 bg-background/50" />
+                  <Input 
+                    id="name" 
+                    name="name"
+                    placeholder="Enter student name" 
+                    required 
+                    className="rounded-xl h-12 bg-background/50" 
+                  />
                 </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="class">Applying for Class</Label>
-                  <Select required>
+                  <Select required onValueChange={setSelectedClass} value={selectedClass}>
                     <SelectTrigger className="rounded-xl h-12 bg-background/50">
                       <SelectValue placeholder="Select class" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="9th">9th Grade</SelectItem>
-                      <SelectItem value="10th">10th Grade</SelectItem>
-                      <SelectItem value="11th-commerce">11th Commerce</SelectItem>
-                      <SelectItem value="11th-science">11th Science</SelectItem>
-                      <SelectItem value="12th-commerce">12th Commerce</SelectItem>
-                      <SelectItem value="12th-science">12th Science</SelectItem>
+                      <SelectItem value="9th Grade">9th Grade</SelectItem>
+                      <SelectItem value="10th Grade">10th Grade</SelectItem>
+                      <SelectItem value="11th Commerce">11th Commerce</SelectItem>
+                      <SelectItem value="11th Science">11th Science</SelectItem>
+                      <SelectItem value="12th Commerce">12th Commerce</SelectItem>
+                      <SelectItem value="12th Science">12th Science</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="10-digit mobile number" required className="rounded-xl h-12 bg-background/50" />
+                  <Input 
+                    id="phone" 
+                    name="phone"
+                    type="tel" 
+                    placeholder="10-digit mobile number" 
+                    required 
+                    className="rounded-xl h-12 bg-background/50" 
+                  />
                 </div>
 
-                <Button type="submit" className="w-full h-14 rounded-xl text-lg font-bold" disabled={isLoading}>
-                  {isLoading ? "Processing..." : (
+                <Button type="submit" className="w-full h-14 rounded-xl text-lg font-bold" disabled={isLoading || !selectedClass}>
+                  {isLoading ? "Redirecting..." : (
                     <>
-                      Apply Now <Send className="ml-2" size={20} />
+                      Apply via WhatsApp <Send className="ml-2" size={20} />
                     </>
                   )}
                 </Button>
