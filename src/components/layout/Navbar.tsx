@@ -13,7 +13,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const logo = PlaceHolderImages.find(img => img.id === 'institute-logo');
+  const logo = logo.jpg;
 
   useEffect(() => {
     const handleScroll = () => {
